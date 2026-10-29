@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#9b2d20">
+  <title>Сопот — Гданьск с гидом</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/textsize.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="back" href="../index.html" aria-label="Назад">←</a>
+    <span class="title">Сопот</span>
+    <div class="text-size" data-text-size></div>
+  </header>
+
+  <main class="wrap">
+    <div class="tour-head">
+      <h1>Сопот</h1>
+      <div class="tour-facts">
+        <span>📍 6 остановок</span>
+        <span>🚶 ~1,2 км пешком</span>
+        <span>⏱ ~2,5 часа</span>
+      </div>
+    </div>
+
+    <section class="intro">
+      <p>Самый знаменитый курорт польского побережья: деревянный мол длиной больше полукилометра, весёлая улица Монте-Кассино, Кривой домик и легендарный Гранд-отель. А ещё — Лесная опера, где в 1978 году Алла Пугачёва получила главный приз фестиваля «Интервидение».</p>
+      <p>Начнём в лесу, у Лесной оперы, потом спустимся в центр и пройдём по главной улице прямо к морю.</p>
+    </section>
+
+    <aside class="tips">
+      <h3>🚗 Как добраться из Гданьска</h3>
+      <p>Около 25 минут на машине от центра Гданьска. Удобнее всего начать с Лесной оперы, а затем переставить машину на одну из платных парковок в центре. Без машины — электричка SKM до станции Sopot (около 20 минут), тогда начните экскурсию со второй остановки.</p>
+    </aside>
+
+    <div id="tour-map" aria-label="Карта маршрута"></div>
+
+    <div class="actions">
+      <a class="btn block" href="forest-opera.html">Начать экскурсию →</a>
+      <a class="btn outline block" href="https://www.google.com/maps/dir/?api=1&amp;destination=54.444626,18.544391&amp;travelmode=driving" target="_blank" rel="noopener">🚗 Маршрут из Гданьска в Google Maps</a>
+    </div>
+
+    <h2 class="section-title">Остановки</h2>
+
+    <a class="stop" href="forest-opera.html" data-lat="54.444626" data-lng="18.544391" data-name="Лесная опера">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Sopot_-_Opera_Le%C5%9Bna_%283%29.JPG/330px-Sopot_-_Opera_Le%C5%9Bna_%283%29.JPG" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 1</div>
+        <h3>Лесная опера</h3>
+        <div class="sub">«Северный Байройт» и «Интервидение»</div>
+      </div>
+    </a>
+    <div class="walk-link">🚗 ~5 мин на машине</div>
+
+    <a class="stop" href="monte-cassino.html" data-lat="54.443214" data-lng="18.563861" data-name="Улица Монте-Кассино">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Bohater%C3%B3w_Monte_Cassino_Sopot_5.jpg/330px-Bohater%C3%B3w_Monte_Cassino_Sopot_5.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 2</div>
+        <h3>Улица Монте-Кассино</h3>
+        <div class="sub">Главная улица курорта</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 ~280 м · 4 мин пешком</div>
+
+    <a class="stop" href="crooked-house.html" data-lat="54.444375" data-lng="18.566595" data-name="Кривой домик">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Krzywy_Domek_in_Sopot.jpg/330px-Krzywy_Domek_in_Sopot.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 3</div>
+        <h3>Кривой домик</h3>
+        <div class="sub">Дом, который тает на солнце</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 ~360 м · 6 мин пешком</div>
+
+    <a class="stop" href="lighthouse.html" data-lat="54.44539" data-lng="18.570464" data-name="Курортная площадь и маяк">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Sopot_2023_05_Lighthouse.jpg/330px-Sopot_2023_05_Lighthouse.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 4</div>
+        <h3>Курортная площадь и маяк</h3>
+        <div class="sub">Маяк, который был трубой</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 ~190 м · 3 мин пешком</div>
+
+    <a class="stop" href="pier.html" data-lat="54.4464" data-lng="18.5719" data-name="Сопотский мол">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Muelle_de_Sopot%2C_Polonia%2C_2013-05-22%2C_DD_03.jpg/330px-Muelle_de_Sopot%2C_Polonia%2C_2013-05-22%2C_DD_03.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 5</div>
+        <h3>Сопотский мол</h3>
+        <div class="sub">Самый длинный деревянный мол Европы</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 ~330 м · 5 мин пешком</div>
+
+    <a class="stop" href="grand-hotel.html" data-lat="54.447443" data-lng="18.568412" data-name="Гранд-отель">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Grand_Hotel%2C_Sopot%2C_Polonia%2C_2013-05-22%2C_DD_02.jpg/330px-Grand_Hotel%2C_Sopot%2C_Polonia%2C_2013-05-22%2C_DD_02.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 6</div>
+        <h3>Гранд-отель</h3>
+        <div class="sub">Отель звёзд, королей и политиков</div>
+      </div>
+    </a>
+  </main>
+
+  <footer>Гданьск с гидом · карта © участники OpenStreetMap</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../js/tour-map.js"></script>
+</body>
+</html>

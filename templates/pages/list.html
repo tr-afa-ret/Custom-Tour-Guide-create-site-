@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#9b2d20">
+  <title>{{LIST_NAME}} — {{SITE_NAME}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/textsize.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="back" href="../index.html" aria-label="Назад">←</a>
+    <span class="title">{{LIST_NAME}}</span>
+    <div class="text-size" data-text-size></div>
+  </header>
+
+  <main class="wrap">
+    <div class="tour-head">
+      <h1>{{LIST_NAME}}</h1>
+    </div>
+
+    <section class="intro">
+      <p>{{WHAT_THIS_LIST_IS_AND_FOR_WHOM}}</p>
+      <p class="muted">Часы работы и цены меняются — проверяйте на сайтах перед поездкой.</p>
+    </section>
+
+    <!-- One card per place. -->
+    <article class="museum">
+      <h2>{{RUSSIAN_NAME}}</h2>
+      <div class="sub">{{ORIGINAL_NAME}} · {{AREA}}</div>
+      <div class="museum-meta"><span class="age">👨‍👩‍👧 {{AGE}}+</span></div>
+      <p>{{ONE_OR_TWO_SENTENCES}}</p>
+      <div class="museum-links">
+        <!-- Search by name + address (URL-encoded) so the app opens the place's own card. -->
+        <a class="btn outline small" href="https://www.google.com/maps/search/?api=1&amp;query={{NAME%2C+ADDRESS%2C+CITY}}" target="_blank" rel="noopener">📍 На карте</a>
+        <a class="btn outline small" href="{{WEBSITE}}" target="_blank" rel="noopener">🌐 Сайт</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>{{SITE_NAME}}</footer>
+
+</body>
+</html>

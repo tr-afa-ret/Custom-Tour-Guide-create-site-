@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#9b2d20">
+  <title>{{TOUR_NAME}} — {{SITE_NAME}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/textsize.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="back" href="../index.html" aria-label="Назад">←</a>
+    <span class="title">{{TOUR_NAME}}</span>
+    <div class="text-size" data-text-size></div>
+  </header>
+
+  <main class="wrap">
+    <div class="tour-head">
+      <h1>{{TOUR_NAME}}</h1>
+      <div class="tour-facts">
+        <span>📍 {{N}} остановок</span>
+        <span>🚶 ~{{KM}} км</span>
+        <span>⏱ ~{{HOURS}} часа</span>
+        <!-- loop only: --><span>🔄 по кругу</span>
+      </div>
+    </div>
+
+    <section class="intro">
+      <p>{{WHAT_YOU_WILL_SEE}}</p>
+      <p>{{ROUTE_IN_ONE_SENTENCE}}</p>
+    </section>
+
+    <!-- Day trips and single locations only: -->
+    <aside class="tips">
+      <h3>🚗 Как добраться из {{CITY_GENITIVE}}</h3>
+      <p>{{DRIVE_TIME_PARKING_PUBLIC_TRANSPORT}}</p>
+    </aside>
+
+    <!-- data-loop: the tour ends where it started. Remove for one-way tours. -->
+    <div id="tour-map" data-loop aria-label="Карта маршрута"></div>
+
+    <div class="actions">
+      <a class="btn block" href="{{FIRST_SLUG}}.html">Начать экскурсию →</a>
+      <!-- Walking tour: full route with a handful of key waypoints (the phone app limits them). -->
+      <a class="btn outline block" href="https://www.google.com/maps/dir/?api=1&amp;origin={{LAT,LNG}}&amp;destination={{LAT,LNG}}&amp;waypoints={{LAT,LNG}}%7C{{LAT,LNG}}&amp;travelmode=walking" target="_blank" rel="noopener">🗺 Весь маршрут в Google Maps</a>
+      <!-- Day trip: <a class="btn outline block" href="https://www.google.com/maps/dir/?api=1&amp;destination={{LAT,LNG}}&amp;travelmode=driving" …>🚗 Маршрут из {{CITY_GENITIVE}} в Google Maps</a> -->
+    </div>
+
+    <h2 class="section-title">Остановки</h2>
+
+    <a class="stop" href="{{SLUG}}.html" data-lat="{{LAT}}" data-lng="{{LNG}}" data-name="{{STOP_NAME}}">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/{{X}}/{{XY}}/{{FILE}}/330px-{{FILE}}" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 1</div>
+        <h3>{{STOP_NAME}}</h3>
+        <div class="sub">{{TEASER}}</div>
+      </div>
+    </a>
+    <!-- Between stops (not after the last one): -->
+    <div class="walk-link">🚶 ~{{METERS}} м · {{MINUTES}} мин пешком</div>
+    <!-- or: <div class="walk-link">🚗 ~{{MINUTES}} мин на машине</div> -->
+
+  </main>
+
+  <footer>{{SITE_NAME}} · карта © участники OpenStreetMap</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../js/tour-map.js"></script>
+</body>
+</html>

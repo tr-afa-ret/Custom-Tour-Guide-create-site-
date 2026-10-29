@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#9b2d20">
+  <title>{{STOP_NAME}} — {{SITE_NAME}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/textsize.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="back" href="index.html" aria-label="Назад">←</a>
+    <span class="title">{{STOP_NAME}}</span>
+    <div class="text-size" data-text-size></div>
+  </header>
+
+  <figure class="photo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/{{X}}/{{XY}}/{{FILE}}/960px-{{FILE}}"
+         alt="{{PHOTO_ALT}}">
+    <figcaption>
+      Фото: {{AUTHOR}},
+      <a href="https://commons.wikimedia.org/wiki/File:{{FILE}}" target="_blank" rel="noopener">Wikimedia Commons</a>,
+      <a href="{{LICENSE_URL}}" target="_blank" rel="noopener">{{LICENSE}}</a>
+    </figcaption>
+  </figure>
+
+  <main class="wrap">
+    <div class="sight-head">
+      <div class="stop-no">Остановка {{N}} из {{TOTAL}}</div>
+      <h1>{{STOP_NAME}}</h1>
+      <div class="sub">{{ORIGINAL_NAME}} · {{PLACE}}</div>
+    </div>
+
+    <div class="map-box">
+      <iframe
+        src="https://maps.google.com/maps?q={{LAT}},{{LNG}}&amp;z=17&amp;hl=ru&amp;output=embed"
+        title="{{STOP_NAME}} на карте"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a class="btn outline"
+         href="https://www.google.com/maps/dir/?api=1&amp;destination={{LAT}},{{LNG}}&amp;travelmode=walking"
+         target="_blank" rel="noopener">📍 Проложить маршрут в Google Maps</a>
+    </div>
+
+    <div class="listen" data-audio="../audio/{{SECTION}}/{{SLUG}}.mp3" data-audio-title="{{STOP_NAME}}" data-audio-target="#story">
+      <div class="listen-row">
+        <button class="btn" type="button" data-audio-play>▶&nbsp; Слушать рассказ</button>
+        <button class="btn outline small" type="button" data-audio-rate aria-label="Скорость">1×</button>
+        <button class="btn outline small" type="button" data-audio-stop hidden aria-label="Стоп">■</button>
+      </div>
+      <div class="listen-progress">
+        <input type="range" min="0" max="100" step="0.1" value="0" data-audio-seek aria-label="Позиция">
+        <span data-audio-time>0:00 / 0:00</span>
+      </div>
+    </div>
+
+    <!-- Read aloud: only h2 and p. Years as digits get a spoken form:
+         <span data-say="тысяча девятьсот сорок пятом">1945</span> году -->
+    <article class="story" id="story">
+      <p>{{STORY_INTRO}}</p>
+
+      <h2>{{SUBHEADING}}</h2>
+
+      <p>{{STORY_PARAGRAPH}}</p>
+    </article>
+
+    <aside class="tips">
+      <h3>Советы гида</h3>
+      <ul>
+        <li>{{TIP}}</li>
+      </ul>
+    </aside>
+
+    <!-- Walking leg: "🚶 ~N м · N мин пешком" + travelmode=walking.
+         Car leg: "🚗 ~N мин на машине" + travelmode=driving + "Как добраться".
+         Last stop: label "Финиш", no next link, buttons back to index.html and ../index.html
+         (see templates/examples/last-stop-loop.html). -->
+    <nav class="next-stop">
+      <div class="label">Следующая остановка</div>
+      <h3>{{NEXT_N}}. {{NEXT_NAME}}</h3>
+      <p class="walk">🚶 ~{{METERS}} м · {{MINUTES}} мин пешком</p>
+      <p>{{HOW_TO_GET_THERE}}</p>
+      <a class="btn block" href="{{NEXT_SLUG}}.html">Перейти к остановке {{NEXT_N}} →</a>
+      <a class="btn outline block" href="https://www.google.com/maps/dir/?api=1&amp;destination={{NEXT_LAT}},{{NEXT_LNG}}&amp;travelmode=walking" target="_blank" rel="noopener">📍 Как дойти — Google Maps</a>
+    </nav>
+
+    <!-- Stop 1: no prev link. -->
+    <a class="prev-link" href="{{PREV_SLUG}}.html">← Предыдущая: {{PREV_N}}. {{PREV_NAME}}</a>
+  </main>
+
+  <footer>{{SITE_NAME}}</footer>
+
+  <script src="../js/audio.js"></script>
+</body>
+</html>

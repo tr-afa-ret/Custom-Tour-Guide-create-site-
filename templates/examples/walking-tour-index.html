@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#9b2d20">
+  <title>Старый город Гданьска — Гданьск с гидом</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/textsize.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="back" href="../index.html" aria-label="Назад">←</a>
+    <span class="title">Старый город Гданьска</span>
+    <div class="text-size" data-text-size></div>
+  </header>
+
+  <main class="wrap">
+    <div class="tour-head">
+      <h1>Старый город Гданьска</h1>
+      <div class="tour-facts">
+        <span>📍 15 остановок</span>
+        <span>🚶 ~3,2 км</span>
+        <span>⏱ ~2,5 часа</span>
+        <span>🔄 по кругу</span>
+      </div>
+    </div>
+
+    <section class="intro">
+      <p>Пешая прогулка по кругу с началом и финишем у средневекового крана Журавль. Мы пройдём по Мариацкой улице к Мариацкому костёлу, заглянем в Старый город к костёлу Святой Екатерины и Большой мельнице, полюбуемся Великим арсеналом, пройдём Королевским трактом от Высоких ворот до Зелёных и вернёмся к Журавлю по набережной Мотлавы.</p>
+      <p>Маршрут без возвратов назад. На странице каждой остановки — рассказ гида, карта и подсказка, как дойти до следующей точки.</p>
+    </section>
+
+    <div id="tour-map" data-loop aria-label="Карта маршрута"></div>
+
+    <div class="actions">
+      <a class="btn block" href="crane.html">Начать экскурсию →</a>
+      <a class="btn outline block" href="https://www.google.com/maps/dir/?api=1&amp;origin=54.350556,18.6575&amp;destination=54.350556,18.6575&amp;waypoints=54.34975,18.653694%7C54.354167,18.651686%7C54.350694,18.64906%7C54.349944,18.646528%7C54.3487,18.6523%7C54.347915,18.655784&amp;travelmode=walking" target="_blank" rel="noopener">🗺 Весь маршрут в Google Maps</a>
+    </div>
+
+    <h2 class="section-title">Остановки</h2>
+
+    <a class="stop" href="crane.html" data-lat="54.350556" data-lng="18.6575" data-name="Журавль">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/2025-04_Gda%C5%84sk_Brama_%C5%BBuraw_%284%29.jpg/330px-2025-04_Gda%C5%84sk_Brama_%C5%BBuraw_%284%29.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 1</div>
+        <h3>Журавль</h3>
+        <div class="sub">Кран на человеческой тяге — финал прогулки</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 4 мин · ~220 м</div>
+
+    <a class="stop" href="mariacka-street.html" data-lat="54.3496" data-lng="18.655476" data-name="Мариацкая улица">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Gda%C5%84sk_view_14.jpg/330px-Gda%C5%84sk_view_14.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 2</div>
+        <h3>Мариацкая улица</h3>
+        <div class="sub">Террасы, янтарь и водосточные драконы</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 3 мин · ~150 м</div>
+
+    <a class="stop" href="st-marys-basilica.html" data-lat="54.34975" data-lng="18.653694" data-name="Мариацкий костёл">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Bazylika_Mariacka_DSC01870.jpg/330px-Bazylika_Mariacka_DSC01870.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 3</div>
+        <h3>Мариацкий костёл</h3>
+        <div class="sub">Один из крупнейших кирпичных храмов мира</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 10 мин · ~660 м</div>
+
+    <a class="stop" href="st-catherine.html" data-lat="54.354167" data-lng="18.651686" data-name="Костёл Святой Екатерины">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Iglesia_de_Santa_Catalina%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_01.jpg/330px-Iglesia_de_Santa_Catalina%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_01.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 4</div>
+        <h3>Костёл Святой Екатерины</h3>
+        <div class="sub">Самый старый приход и звездочёт Гевелий</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 2 мин · ~130 м</div>
+
+    <a class="stop" href="great-mill.html" data-lat="54.3541" data-lng="18.6501" data-name="Большая мельница">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/SM_Gda%C5%84sk_Wielki_M%C5%82yn_%282%29_ID_635793.jpg/330px-SM_Gda%C5%84sk_Wielki_M%C5%82yn_%282%29_ID_635793.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 5</div>
+        <h3>Большая мельница</h3>
+        <div class="sub">Средневековый завод на восемнадцати колёсах</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 8 мин · ~500 м</div>
+
+    <a class="stop" href="great-armoury.html" data-lat="54.350694" data-lng="18.64906" data-name="Великий арсенал">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Gran_Armer%C3%ADa%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_12.jpg/330px-Gran_Armer%C3%ADa%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_12.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 6</div>
+        <h3>Великий арсенал</h3>
+        <div class="sub">Склад оружия, похожий на дворец</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 4 мин · ~240 м</div>
+
+    <a class="stop" href="upland-gate.html" data-lat="54.349944" data-lng="18.646528" data-name="Высокие ворота">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Puerta_Alta%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_04.jpg/330px-Puerta_Alta%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_04.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 7</div>
+        <h3>Высокие ворота</h3>
+        <div class="sub">Начало Королевского тракта</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 2 мин · ~80 м</div>
+
+    <a class="stop" href="prison-tower.html" data-lat="54.34981" data-lng="18.64744" data-name="Тюремная башня и Пыточный дом">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Torre_Gaol%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_01.jpg/330px-Torre_Gaol%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_01.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 8</div>
+        <h3>Тюремная башня и Пыточный дом</h3>
+        <div class="sub">Мрачная история средневекового правосудия</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 1 мин · ~50 м</div>
+
+    <a class="stop" href="golden-gate.html" data-lat="54.349722" data-lng="18.648056" data-name="Золотые ворота">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Puerta_Dorada%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_01.jpg/330px-Puerta_Dorada%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_01.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 9</div>
+        <h3>Золотые ворота</h3>
+        <div class="sub">Восемь добродетелей и мудрость Саллюстия</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 2 мин · ~120 м</div>
+
+    <a class="stop" href="long-street.html" data-lat="54.349278" data-lng="18.649236" data-name="Длинная улица и дом Упхагена">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Kamienica_Gda%C5%84sk%2C_ul._D%C5%82uga_12_by_AW.jpg/330px-Kamienica_Gda%C5%84sk%2C_ul._D%C5%82uga_12_by_AW.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 10</div>
+        <h3>Длинная улица и дом Упхагена</h3>
+        <div class="sub">Купеческие дома и город, восставший из пепла</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 4 мин · ~270 м</div>
+
+    <a class="stop" href="town-hall.html" data-lat="54.3487" data-lng="18.6523" data-name="Ратуша Главного города">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Ayuntamiento_Principal%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_06.jpg/330px-Ayuntamiento_Principal%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_06.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 11</div>
+        <h3>Ратуша Главного города</h3>
+        <div class="sub">Золотой король и Красная зала</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 2 мин · ~80 м</div>
+
+    <a class="stop" href="neptune-fountain.html" data-lat="54.34855" data-lng="18.65323" data-name="Фонтан Нептуна">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Monumento_Neptuno%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_01.jpg/330px-Monumento_Neptuno%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_01.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 12</div>
+        <h3>Фонтан Нептуна</h3>
+        <div class="sub">Символ города и легенда о «золотой воде»</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 1 мин · ~30 м</div>
+
+    <a class="stop" href="artus-court.html" data-lat="54.34875" data-lng="18.653417" data-name="Артусов двор и Золотой дом">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Artus_Court_in_Gda%C5%84sk_%283%29.JPG/330px-Artus_Court_in_Gda%C5%84sk_%283%29.JPG" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 13</div>
+        <h3>Артусов двор и Золотой дом</h3>
+        <div class="sub">Клуб купцов и гигантская печь</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 4 мин · ~230 м</div>
+
+    <a class="stop" href="green-gate.html" data-lat="54.347915" data-lng="18.655784" data-name="Зелёные ворота">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Gda%C5%84sk%2C_Brama_Zielona_%28HB1%29.jpg/330px-Gda%C5%84sk%2C_Brama_Zielona_%28HB1%29.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 14</div>
+        <h3>Зелёные ворота</h3>
+        <div class="sub">Королевский дворец, в котором не жили короли</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 3 мин · ~190 м</div>
+
+    <a class="stop" href="long-embankment.html" data-lat="54.34905" data-lng="18.6568" data-name="Длинная набережная">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Calle_Dlugie_Pobrzeze%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_06.jpg/330px-Calle_Dlugie_Pobrzeze%2C_Gdansk%2C_Polonia%2C_2013-05-20%2C_DD_06.jpg" alt="" loading="lazy">
+      <div>
+        <div class="num">Остановка 15</div>
+        <h3>Длинная набережная</h3>
+        <div class="sub">Старый порт и столица янтаря</div>
+      </div>
+    </a>
+    <div class="walk-link">🚶 4 мин · ~230 м · обратно к Журавлю 🏁</div>
+  </main>
+
+  <footer>Гданьск с гидом · карта © участники OpenStreetMap</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../js/tour-map.js"></script>
+</body>
+</html>

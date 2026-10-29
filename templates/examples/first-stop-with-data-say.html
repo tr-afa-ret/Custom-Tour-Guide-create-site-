@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#9b2d20">
+  <title>Журавль — Гданьск с гидом</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/textsize.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="back" href="index.html" aria-label="Назад">←</a>
+    <span class="title">Журавль</span>
+    <div class="text-size" data-text-size></div>
+  </header>
+
+  <figure class="photo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/2025-04_Gda%C5%84sk_Brama_%C5%BBuraw_%284%29.jpg/960px-2025-04_Gda%C5%84sk_Brama_%C5%BBuraw_%284%29.jpg"
+         alt="Средневековый портовый кран Журавль на набережной Мотлавы">
+    <figcaption>
+      Фото: Marek Mróz,
+      <a href="https://commons.wikimedia.org/wiki/File:2025-04_Gda%C5%84sk_Brama_%C5%BBuraw_(4).jpg" target="_blank" rel="noopener">Wikimedia Commons</a>,
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+    </figcaption>
+  </figure>
+
+  <main class="wrap">
+    <div class="sight-head">
+      <div class="stop-no">Остановка 1 из 15</div>
+      <h1>Журавль</h1>
+      <div class="sub">Żuraw · средневековый портовый кран</div>
+    </div>
+
+    <div class="map-box">
+      <iframe
+        src="https://maps.google.com/maps?q=54.350556,18.6575&amp;z=17&amp;hl=ru&amp;output=embed"
+        title="Журавль на карте"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <a class="btn outline"
+         href="https://www.google.com/maps/dir/?api=1&amp;destination=54.350556,18.6575&amp;travelmode=walking"
+         target="_blank" rel="noopener">📍 Проложить маршрут в Google Maps</a>
+    </div>
+
+    <div class="listen" data-audio="../audio/old-town/crane.mp3" data-audio-title="Журавль" data-audio-target="#story">
+      <div class="listen-row">
+        <button class="btn" type="button" data-audio-play>▶&nbsp; Слушать рассказ</button>
+        <button class="btn outline small" type="button" data-audio-rate aria-label="Скорость">1×</button>
+        <button class="btn outline small" type="button" data-audio-stop hidden aria-label="Стоп">■</button>
+      </div>
+      <div class="listen-progress">
+        <input type="range" min="0" max="100" step="0.1" value="0" data-audio-seek aria-label="Позиция">
+        <span data-audio-time>0:00 / 0:00</span>
+      </div>
+    </div>
+
+    <article class="story" id="story">
+      <p>Здравствуйте и добро пожаловать в Гданьск! Нашу прогулку мы начнём и закончим здесь, у Журавля — самого узнаваемого силуэта гданьской набережной. Это одновременно и городские ворота, и средневековый портовый кран. Таких сооружений в Европе почти не осталось.</p>
+
+      <h2>Кран на человеческой тяге</h2>
+
+      <p>Журавль в нынешнем виде построили в <span data-say="тысяча четыреста сорок втором – тысяча четыреста сорок четвёртом">1442–1444</span> годах. Внутри деревянной башни скрыты огромные колёса в несколько метров высотой. В них, как белки в колесе, шагали рабочие, и их шаги через валы и канаты поднимали грузы весом в несколько тонн. Но главной работой Журавля была установка мачт: кран поднимал тяжёлую мачту и аккуратно опускал её в корпус корабля.</p>
+
+      <h2>Символ порта</h2>
+
+      <p>В пятнадцатом веке это был один из крупнейших портовых кранов Европы. Он работал несколько столетий и стал символом гданьского порта. В <span data-say="тысяча девятьсот сорок пятом">1945</span> году Журавль сильно пострадал от огня, но его восстановили, вместе с деревянным механизмом. Сегодня здесь отделение Национального морского музея: можно зайти внутрь и увидеть колёса своими глазами.</p>
+
+      <h2>Наш маршрут</h2>
+
+      <p>Отсюда мы пойдём по кругу. Сначала — по атмосферной Мариацкой улице к громаде Мариацкого костёла. Потом заглянем в Старый город, к костёлу Святой Екатерины и Большой мельнице, выйдем на Угольный рынок к Великому арсеналу, а оттуда, как польские короли, пройдём Королевским трактом от Высоких ворот до Зелёных. А закончим у реки, вернувшись сюда же, к Журавлю. Пойдёмте!</p>
+    </article>
+
+    <aside class="tips">
+      <h3>Советы гида</h3>
+      <ul>
+        <li>Вся прогулка — около трёх километров по брусчатке, с остановками — примерно два с половиной часа. Удобная обувь обязательна.</li>
+        <li>Лучшее время — утро: на улицах ещё мало туристов. Вечером, когда набережная подсвечена, стоит вернуться сюда ещё раз.</li>
+        <li>Через реку, на острове Оловянка, — главное здание Морского музея и пароход «Сольдек». А в тёплый сезон с набережной отходят кораблики на Вестерплатте.</li>
+      </ul>
+    </aside>
+
+    <nav class="next-stop">
+      <div class="label">Следующая остановка</div>
+      <h3>2. Мариацкая улица</h3>
+      <p class="walk">🚶 ~220 м · 4 мин пешком</p>
+      <p>Встаньте лицом к реке и идите по набережной направо, на юг, около 150 метров — до ворот, рядом с которыми стоит высокая башня. Это Мариацкие ворота. Поверните в них.</p>
+      <a class="btn block" href="mariacka-street.html">Перейти к остановке 2 →</a>
+      <a class="btn outline block" href="https://www.google.com/maps/dir/?api=1&amp;destination=54.3496,18.655476&amp;travelmode=walking" target="_blank" rel="noopener">📍 Как дойти — Google Maps</a>
+    </nav>
+  </main>
+
+  <footer>Гданьск с гидом</footer>
+
+  <script src="../js/audio.js"></script>
+</body>
+</html>
