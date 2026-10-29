@@ -1,0 +1,5 @@
+.env
+tools/.venv/
+tools/audio-cache/
+tools/samples/
+__pycache__/
