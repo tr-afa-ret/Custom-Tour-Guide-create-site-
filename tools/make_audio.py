@@ -20,8 +20,7 @@ Engines (keys live in the project's .env file, see .env.example):
               (default eleven_multilingual_v2).
   edge        free unofficial Microsoft Edge "Read aloud" service (edge-tts package).
               No key, but slow and drops requests at random.
-Default engine: AUDIO_ENGINE from .env (azure | elevenlabs | edge); if unset, azure when its key is set,
-otherwise edge. --engine overrides it.
+Default engine: azure if its key is set, otherwise edge. ElevenLabs is opt-in (--engine elevenlabs).
 
 Usage (from the project root):
     tools/.venv/Scripts/python tools/make_audio.py                 # all pages under site/
@@ -328,8 +327,7 @@ async def main():
     ap = argparse.ArgumentParser(description="Generate narration MP3s for sight pages.")
     ap.add_argument("targets", nargs="*", default=[str(ROOT / "site")], help="pages or folders (default: site/)")
     ap.add_argument("--engine", choices=["azure", "elevenlabs", "edge"],
-                    default=os.environ.get("AUDIO_ENGINE")
-                    or ("azure" if os.environ.get("AZURE_SPEECH_KEY") else "edge"))
+                    default="azure" if os.environ.get("AZURE_SPEECH_KEY") else "edge")
     ap.add_argument("--voice", help="ElevenLabs voice id (overrides ELEVENLABS_VOICE_ID)")
     ap.add_argument("--force", action="store_true", help="rebuild pages even if up to date")
     ap.add_argument("--sample-dir", help="write test MP3s here instead of into the site")
