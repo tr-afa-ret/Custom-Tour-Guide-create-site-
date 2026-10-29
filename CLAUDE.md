@@ -18,7 +18,7 @@ Claude has two roles in this project:
 <!-- Filled in during kickoff. -->
 - **Location / area:** _not set yet_
 - **Site name:** _not set yet_ (used in `<title>` as "Page — Site name", the footer and the lock-screen player)
-- **Audio:** _not set yet_ (azure / elevenlabs / none; voice; set `AUDIO_ENGINE` in `.env`)
+- **Audio:** _not set yet_ (azure / elevenlabs / none, and the voice)
 - **Sections:** _none yet_ (for each: slug, type (walking tour / day trip / single location / list), stops in order, start and end)
 
 ## How the user works (important)
